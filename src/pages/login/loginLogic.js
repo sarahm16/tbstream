@@ -24,7 +24,7 @@ function LoginLogic() {
             localStorage.setItem('email', loginResponse.account.username);
             localStorage.setItem('userName', loginResponse.account.name)
 
-            navigate('/thumbnails');
+            navigate('/videos');
             
         } catch (err) {
             alert('Incorrect login, please try again')
