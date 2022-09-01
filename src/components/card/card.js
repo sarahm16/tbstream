@@ -25,46 +25,46 @@ export default function ThumbnailCard(props) {
 
     return (
         <Card sx={{ maxWidth: 345 }}>
-        <CardHeader
-            title="5 Minute Friday"
-            subheader={new Date(date).toLocaleDateString()}
-        />
-        <CardMedia
-            component="img"
-            height="194"
-            image="/static/images/cards/paella.jpg"
-            alt="Paella dish"
-        />
-        {/* <CardContent>
-            <Typography variant="body2" color="text.secondary">
-            This impressive paella is a perfect party dish and a fun meal to cook
-            together with your guests. Add 1 cup of frozen peas along with the mussels,
-            if you like.
-            </Typography>
-        </CardContent> */}
-        <CardActions disableSpacing>
-            <IconButton 
-                aria-label="play"
-                onClick={redirect}
-            >
-                <PlayCircleOutline sx={{fontSize: '30px'}} />
-            </IconButton>
-            <Box
-                sx={{marginLeft: 'auto', pr: 2}}
-            >
-                {/* <Badge badgeContent={numComments} color='primary'>
-                    <FavoriteIcon
-                        sx={{fontSize: '25px'}}
-                    />
-                </Badge> */}
+            <CardHeader
+                title="5 Minute Friday"
+                subheader={new Date(date).toLocaleDateString()}
+            />
+            <CardMedia
+                component="img"
+                height="194"
+                image="/static/images/cards/paella.jpg"
+                alt="Paella dish"
+            />
+            {/* <CardContent>
+                <Typography variant="body2" color="text.secondary">
+                This impressive paella is a perfect party dish and a fun meal to cook
+                together with your guests. Add 1 cup of frozen peas along with the mussels,
+                if you like.
+                </Typography>
+            </CardContent> */}
+            <CardActions disableSpacing>
+                <IconButton 
+                    aria-label="play"
+                    onClick={redirect}
+                >
+                    <PlayCircleOutline sx={{fontSize: '30px'}} />
+                </IconButton>
+                <Box
+                    sx={{marginLeft: 'auto', pr: 2}}
+                >
+                    {/* <Badge badgeContent={numComments} color='primary'>
+                        <FavoriteIcon
+                            sx={{fontSize: '25px'}}
+                        />
+                    </Badge> */}
 
-                <Badge badgeContent={numComments} color='primary'>
-                    <ChatBubble
-                        sx={{fontSize: '25px'}}
-                    />
-                </Badge>
-            </Box>
-        </CardActions>
+                    <Badge badgeContent={numComments} color='primary'>
+                        <ChatBubble
+                            sx={{fontSize: '25px'}}
+                        />
+                    </Badge>
+                </Box>
+            </CardActions>
         </Card>
     );
 }

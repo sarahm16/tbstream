@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import { MenuItem, Menu } from "@mui/material";
+import { MenuItem, Menu, Button } from "@mui/material";
 
 function PageLayout(props) {
+    const [upload, setUpload] = useState(false);
     const { children }= props;
     const [anchorEl, setAnchorEl] = useState(null);
 
@@ -16,6 +17,15 @@ function PageLayout(props) {
     }
 
     const handleClose = () => setAnchorEl(null);
+
+    let uploadEmails = ['carters@transblue.org', 'kaypet@transblue.org', 'jim.wescott@transblue.org'];
+
+    useEffect(() => {
+        let userEmail = localStorage.getItem('email');
+        if(uploadEmails.indexOf(userEmail.toLowerCase()) > -1) {
+            setUpload(true);
+        }
+    }, [])
 
     return(
         <Box sx={{ flexGrow: 1 }}>
@@ -33,6 +43,17 @@ function PageLayout(props) {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         5 Minute Friday
                     </Typography>
+
+                    {upload && 
+                        <Button
+                            component='a'
+                            href='/upload'
+                            sx={{ my: 2, color: 'white', display: 'block' }}
+                        >
+                            upload
+                        </Button>
+                    }
+                    
                     <IconButton
                         size="large"
                         aria-label="account of current user"
