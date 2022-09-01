@@ -6,8 +6,10 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import { MenuItem, Menu, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 function PageLayout(props) {
+    const navigate = useNavigate();
     const [upload, setUpload] = useState(false);
     const { children }= props;
     const [anchorEl, setAnchorEl] = useState(null);
@@ -16,7 +18,13 @@ function PageLayout(props) {
         setAnchorEl(event.currentTarget);
     }
 
-    const handleClose = () => setAnchorEl(null);
+    const handleClose = () => {
+        setAnchorEl(null);
+        localStorage.removeItem('account');
+        localStorage.removeItem('userName');
+        localStorage.removeItem('email');
+        navigate('/')
+    };
 
     let uploadEmails = ['carters@transblue.org', 'kaypet@transblue.org', 'jim.wescott@transblue.org'];
 
@@ -79,8 +87,8 @@ function PageLayout(props) {
                         open={Boolean(anchorEl)}
                         onClose={handleClose}
                     >
-                        <MenuItem onClick={handleClose}>Profile</MenuItem>
-                        <MenuItem onClick={handleClose}>My account</MenuItem>
+                        <MenuItem onClick={handleClose}>Logout</MenuItem>
+                        {/* <MenuItem onClick={handleClose}>My account</MenuItem> */}
                     </Menu>
                 </Toolbar>
             </AppBar>

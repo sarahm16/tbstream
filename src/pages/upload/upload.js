@@ -16,7 +16,8 @@ function Upload() {
 
     const [video, setVideo] = useState({
         likes: 0,
-        comments: []
+        comments: [],
+        name: '5 Minute Friday'
     });
 
     function save() {
@@ -74,7 +75,7 @@ function Upload() {
             >
                 back to videos
             </Button>
-            <Paper sx={{p: 3, mt: 2}}>
+            <Paper sx={{p: 3, mt: 2, maxWidth: '600px'}}>
                 <Typography variant="h5">
                     Upload a Video
                 </Typography>
@@ -94,6 +95,18 @@ function Upload() {
                         <img src={video.thumbnail.src} style={{width: '200px'}} />
                     </Box>
                 }
+
+                <TextField
+                    fullWidth
+                    size='small'
+                    sx={{mt: 3}}
+                    label='Video Name'
+                    value={video.name}
+                    onChange={(e) => setVideo({
+                        ...video,
+                        name: e.target.value
+                    })}
+                />
 
                 <TextField
                     fullWidth
