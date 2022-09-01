@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import PageLayout from "../../components/pageLayout/pageLayout";
 
 function OpenVideo() {
     const [video, setVideo] = useState({});
@@ -8,7 +9,9 @@ function OpenVideo() {
     }, [])
 
     return (
-        <></>
+        <PageLayout>
+
+        </PageLayout>
     )
 
 }

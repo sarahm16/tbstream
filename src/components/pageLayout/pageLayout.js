@@ -7,7 +7,8 @@ import IconButton from '@mui/material/IconButton';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import { MenuItem, Menu } from "@mui/material";
 
-function PageLayout() {
+function PageLayout(props) {
+    const { children }= props;
     const [anchorEl, setAnchorEl] = useState(null);
 
     const handleMenu = (event) => {
@@ -62,6 +63,10 @@ function PageLayout() {
                     </Menu>
                 </Toolbar>
             </AppBar>
+
+            <Box component="main" sx={{ flexGrow: 1, p: 2, bgcolor: '#f5f5f5', minHeight: '100vh'}}>
+                { children }
+            </Box>
         </Box>
     )
 }
