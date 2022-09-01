@@ -8,7 +8,7 @@ import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { ChatBubble, PlayArrow, PlayCircleOutline } from '@mui/icons-material';
+import { ChatBubble, ChatBubbleOutline, PlayArrow, PlayCircleOutline } from '@mui/icons-material';
 import { Badge, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
@@ -24,7 +24,7 @@ export default function ThumbnailCard(props) {
     }
 
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ width: '100%' }}>
             <CardHeader
                 title="5 Minute Friday"
                 subheader={new Date(date).toLocaleDateString()}
@@ -59,8 +59,8 @@ export default function ThumbnailCard(props) {
                     </Badge> */}
 
                     <Badge badgeContent={numComments} color='primary'>
-                        <ChatBubble
-                            sx={{fontSize: '25px'}}
+                        <ChatBubbleOutline
+                            sx={{fontSize: '25px', color: '#ed6a22'}}
                         />
                     </Badge>
                 </Box>
