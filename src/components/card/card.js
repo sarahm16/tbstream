@@ -32,7 +32,7 @@ export default function ThumbnailCard(props) {
             <CardMedia
                 component="img"
                 height="194"
-                image="/static/images/cards/paella.jpg"
+                image={thumbnail || ''}
                 alt="Paella dish"
             />
             {/* <CardContent>
