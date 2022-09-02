@@ -7,12 +7,15 @@ import IconButton from '@mui/material/IconButton';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import { MenuItem, Menu, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+// import logo from '../../images/EB.png';
 
 function PageLayout(props) {
     const navigate = useNavigate();
     const [upload, setUpload] = useState(false);
     const { children }= props;
     const [anchorEl, setAnchorEl] = useState(null);
+
+    let userEmail = localStorage.getItem('email');
 
     const handleMenu = (event) => {
         setAnchorEl(event.currentTarget);
@@ -29,8 +32,11 @@ function PageLayout(props) {
     let uploadEmails = ['carters@transblue.org', 'kaypet@transblue.org', 'jim.wescott@transblue.org'];
 
     useEffect(() => {
-        let userEmail = localStorage.getItem('email');
-        if(uploadEmails.indexOf(userEmail.toLowerCase()) > -1) {
+        if(!userEmail) {
+            navigate('/')
+        }
+
+        else if(uploadEmails.indexOf(userEmail.toLowerCase()) > -1) {
             setUpload(true);
         }
     }, [])
@@ -48,6 +54,8 @@ function PageLayout(props) {
                     >
                         <MenuIcon />
                     </IconButton> */}
+
+                    {/* <img src={logo} alt='logo' /> */}
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         5 Minute Friday
                     </Typography>

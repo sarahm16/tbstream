@@ -76,12 +76,17 @@ export default function ThumbnailCard(props) {
                         : ''
                     }
             />
-            <CardMedia
-                component="img"
-                height="194"
-                image={thumbnail || ''}
-                alt="Thumbnail"
-            />
+            <Box
+                component='a'
+                href={`/videos/${id}`}
+            >
+                <CardMedia
+                    component="img"
+                    height="194"
+                    image={thumbnail || ''}
+                    alt="Thumbnail"
+                />
+            </Box>
             <CardActions disableSpacing>
                 <IconButton 
                     aria-label="play"
