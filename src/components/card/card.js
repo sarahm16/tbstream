@@ -37,7 +37,7 @@ export default function ThumbnailCard(props) {
 
     function handleEdit() {
         if(editOn) {
-            axios.post(`https://my-tb-cors.herokuapp.com/https://connect-fns.azurewebsites.net/api/updateWithKey?containerId=stream&id=${id}&partitionKey=id`, {
+            axios.post(`https://my-tb-cors.herokuapp.com/https://connect-fns2.azurewebsites.net/api/updateWithKey?containerId=stream&id=${id}&partitionKey=id`, {
                 name: name
             }).catch(err => {
                 alert('Oops! There was an error. Please try again.')

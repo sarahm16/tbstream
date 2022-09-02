@@ -8,7 +8,7 @@ function Thumbnails() {
     const [videos, setVideos] = useState([]);
 
     useEffect(() => {
-        axios.get('https://my-tb-cors.herokuapp.com/https://connect-fns.azurewebsites.net/api/getall?containerId=stream').then(res => {
+        axios.get('https://my-tb-cors.herokuapp.com/https://connect-fns2.azurewebsites.net/api/getall?containerId=stream').then(res => {
             console.log(res.data)
             if(res.data !== 'No items found') {
                 setVideos(res.data.sort((a, b) => {

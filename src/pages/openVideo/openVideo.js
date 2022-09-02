@@ -15,7 +15,7 @@ function OpenVideo() {
     let user = localStorage.getItem('userName');
 
     useEffect(() => {
-        axios.get(`https://my-tb-cors.herokuapp.com/https://connect-fns.azurewebsites.net/api/getById?containerId=stream&id=${id}`).then(res => {
+        axios.get(`https://my-tb-cors.herokuapp.com/https://connect-fns2.azurewebsites.net/api/getById?containerId=stream&id=${id}`).then(res => {
             console.log(res.data)
             setVideo(res.data[0]);
         })
@@ -25,7 +25,7 @@ function OpenVideo() {
         comment.date = new Date().getTime();
         comment.user = user;
 
-        axios.post(`https://my-tb-cors.herokuapp.com/https://connect-fns.azurewebsites.net/api/updateWithKey?containerId=stream&id=${id}&partitionKey=id`, {
+        axios.post(`https://my-tb-cors.herokuapp.com/https://connect-fns2.azurewebsites.net/api/updateWithKey?containerId=stream&id=${id}&partitionKey=id`, {
             comments: [comment, ...video.comments]
         }).catch(err => {
             alert('Oops! There was an error saving your comment. Please try again')

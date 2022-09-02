@@ -35,7 +35,7 @@ function Upload() {
 
         console.log(video)
 
-        axios.post(`https://my-tb-cors.herokuapp.com/https://connect-fns.azurewebsites.net/api/save?containerId=stream`, video).catch(err => {
+        axios.post(`https://my-tb-cors.herokuapp.com/https://connect-fns2.azurewebsites.net/api/save?containerId=stream`, video).catch(err => {
             alert('Oops! There was an error saving video. Please try again.')
         }).then(res => {
             navigate('/videos')
