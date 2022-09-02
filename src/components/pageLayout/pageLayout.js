@@ -31,6 +31,8 @@ function PageLayout(props) {
 
     let uploadEmails = ['carters@transblue.org', 'kaypet@transblue.org', 'jim.wescott@transblue.org'];
 
+    let allowedDomains = ['transblue', 'condoshield', 'evergreenbrands'];
+
     useEffect(() => {
         if(!userEmail) {
             navigate('/')
@@ -38,6 +40,15 @@ function PageLayout(props) {
 
         else if(uploadEmails.indexOf(userEmail.toLowerCase()) > -1) {
             setUpload(true);
+        }
+
+        else {
+            allowedDomains.forEach(domain => {
+                userEmail.toLowerCase().indexOf(domain)
+                if(userEmail.toLowerCase().indexOf(domain) === -1) {
+                    navigate('/')
+                }
+            })
         }
     }, [])
 
