@@ -27,8 +27,16 @@
 
 .login-wrapper button {
     color: white;
-    background-color: #0b56a4;
+    /* background-color: #0b56a4; */
     padding: 3px;
+    transition: 0.5s;
+    --c1: #0b56a4;
+    --c2: #ed6a22;
+    background: linear-gradient(90deg, var(--c1, #0b56a4), var(--c2, #0b56a4) 51%, var(--c1, #0b56a4)) var(--x, 0)/ 200%;
+}
+
+.login-wrapper button:hover {
+    --x: 100%;
 }
 
 .login-wrapper img {

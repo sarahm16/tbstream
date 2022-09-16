@@ -44,13 +44,12 @@ function PageLayout(props) {
 
         else {
             allowedDomains.forEach(domain => {
-                userEmail.toLowerCase().indexOf(domain)
-                if(userEmail.toLowerCase().indexOf(domain) === -1) {
+                if(userEmail.toLowerCase().indexOf('transblue') === -1 && userEmail.toLowerCase().indexOf('condoshield') === -1 && userEmail.toLowerCase().indexOf('evergreenbrands') === -1) {
                     navigate('/')
                 }
             })
         }
-    }, [])
+    }, []);
 
     return(
         <Box sx={{ flexGrow: 1 }}>

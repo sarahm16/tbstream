@@ -11,7 +11,7 @@ const Login = () => {
         <div className='login-bg'>
             <div className='login-wrapper centered-component'>
                 <img src={logoSmall} alt='EB Logo' />
-                <h3 className='text-center'>5 Minute Friday</h3>
+                <h3 className='text-center'>5-ish Minute Friday</h3>
                 <Divider sx={{my: '16px'}} />
                 <p className='text-muted'>Press the login button below to log in to your Microsoft account</p>
                 <Divider sx={{my: '16px'}} />
